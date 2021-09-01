@@ -18,7 +18,7 @@ namespace TheBlogProjectMVC.Models
         [Display(Name ="Blog Name")]
         public int BlogId { get; set; }
 
-        public string AuthorId { get; set; }
+        public string BlogUserId { get; set; }
 
         [Required]
         [StringLength(50, ErrorMessage = "The {0} must be at least {2} and at most {1} characters Long", MinimumLength = 2)]
@@ -49,7 +49,7 @@ namespace TheBlogProjectMVC.Models
         public IFormFile Image { get; set; }
 
         public virtual Blog Blog { get; set; }
-        public virtual BlogUser Author { get; set; }
+        public virtual BlogUser BlogUser { get; set; }
 
         public virtual ICollection<Tag> Tags { get; set; } = new HashSet<Tag>();
 
