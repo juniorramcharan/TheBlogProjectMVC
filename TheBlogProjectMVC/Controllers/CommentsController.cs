@@ -34,9 +34,15 @@ namespace TheBlogProjectMVC.Controllers
             return View("Index", moderatedComments);
         }
         //Deleted Index
-        public async Task<IActionResult> DeletedIndex()
+        //public async Task<IActionResult> DeletedIndex()
+        //{
+
+        //}
+
+        public async Task<IActionResult> Index()
         {
-            
+            var allComments = await _context.Comments.ToListAsync();
+            return View(allComments);
         }
         //public async Task<IActionResult> Index()
         //{
@@ -45,25 +51,25 @@ namespace TheBlogProjectMVC.Controllers
         //}
 
         // GET: Comments/Details/5
-        public async Task<IActionResult> Details(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
+        //public async Task<IActionResult> Details(int? id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return NotFound();
+        //    }
 
-            var comment = await _context.Comments
-                .Include(c => c.BlogUser)
-                .Include(c => c.Moderator)
-                .Include(c => c.Post)
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (comment == null)
-            {
-                return NotFound();
-            }
+        //    var comment = await _context.Comments
+        //        .Include(c => c.BlogUser)
+        //        .Include(c => c.Moderator)
+        //        .Include(c => c.Post)
+        //        .FirstOrDefaultAsync(m => m.Id == id);
+        //    if (comment == null)
+        //    {
+        //        return NotFound();
+        //    }
 
-            return View(comment);
-        }
+        //    return View(comment);
+        //}
 
         // GET: Comments/Create
         //public IActionResult Create()

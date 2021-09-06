@@ -21,4 +21,8 @@
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="5.0.7" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Views\Tags\" />
+  </ItemGroup>
+
 </Project>
