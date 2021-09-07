@@ -13,6 +13,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using TheBlogProjectMVC.Data;
 using TheBlogProjectMVC.Models;
+using TheBlogProjectMVC.Services;
 
 namespace TheBlogProjectMVC
 {
@@ -31,6 +32,7 @@ namespace TheBlogProjectMVC
             //services.AddDbContext<ApplicationDbContext>(options =>
             //    options.UseSqlServer(
             //        Configuration.GetConnectionString("DefaultConnection")));
+
             services.AddDbContext<ApplicationDbContext>(options =>
                options.UseNpgsql(
                    Configuration.GetConnectionString("DefaultConnection")));
@@ -45,6 +47,9 @@ namespace TheBlogProjectMVC
             //     .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddControllersWithViews();
             services.AddRazorPages();
+
+            // Register my custom Dataservices class;
+            services.AddScoped<DataService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
