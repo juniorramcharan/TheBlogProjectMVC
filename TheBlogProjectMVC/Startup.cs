@@ -56,6 +56,7 @@ namespace TheBlogProjectMVC
             services.AddScoped<IBlogEmailSender, EmailService>();
             //Register an Image service
             services.AddScoped<IImageService, BasicImageService>();
+            services.AddScoped<ISlugService, BasicSlugService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

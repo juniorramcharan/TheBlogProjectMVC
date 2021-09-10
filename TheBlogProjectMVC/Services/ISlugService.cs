@@ -5,7 +5,9 @@ using System.Threading.Tasks;
 
 namespace TheBlogProjectMVC.Services
 {
-    interface ISlugService
+    public interface ISlugService
     {
+        string UrlFriendly(string title);
+        bool IsUnique(string slug);
     }
 }
